@@ -146,7 +146,7 @@ if(EINSUMS_BUILD_PYTHON OR EINSUMS_BUILD_PYTHON MATCHES "3(\.[0-9]+)*")
     einsums_extend_with_python(${lib})
 
     if(${BLA_VENDOR} MATCHES "[mM][kK][lL]")
-      target_link_libraries(${lib} $<$<COMPILE_ID:GNU>:atomic>)
+      target_link_libraries(${lib} $<$<CXX_COMPILER_ID:GNU>:atomic>)
     endif()
 
     install(
